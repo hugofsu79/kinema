@@ -1,35 +1,37 @@
 <template>
-    <!-- boucle v-for qui va parcourir les films pour les afficher -->
-    <!-- v-bind:key="movie.id" : identifiant de chaque film -->
-    <!-- v-bind permet d'injecter une variable en tant que valeur d'un attribut -->
-    <div class="container-fluid">
-        <div class="row">
-
-            <div v-for="movie in movies" v-bind:key="movie.id" class="col-sm-6 col-md-4 col-lg-4 p-3">
-                <!-- v-bind : prop attendue = valeur (mon alias du v-for) -->
-                <MovieCard v-bind:movie="movie" />
-
-
-            </div>
-        </div>
-    </div>
+    <h1>Films Americain</h1>
+    <MoviesList v-bind:movies="americanMovies" />
 </template>
 
 
 <script>
 
-import MoviesList from "./MoviesList";
+import MoviesList from "./utils/MoviesList.vue";
+import axios from "axios"
 
 export default {
-    name: "AmericainMovies",
-
     components: {
         MoviesList
     },
 
-    // list de films à afficher, fournie par le parent
-    props: ["movies"],
+    data() { //LES variables dispo dans mon composant
+        return { // elles vont contenir les films récupéré par l'appel API
+            americanMovies: null,
+            error: false // error : en cas de problème lors de l'appel API
+        }
+    },
 
+    name: 'AmericanMovies',
+
+    created() {
+        axios.get("https://api.themoviedb.org/3/discover/movie/?api_key=a5087ee297fbc59075d15615744b267d&language=fr&certification_country=us&sort_by=primary_release_date.desc&page=1&vote_count.gte=1000")
+            .then(res => {
+                this.americanMovies = res.data.results // Je stock mes films récupérés dans la variable movies des datas (console -> Proxy)
+                console.log(this.americanMovies)
+            })
+
+            .catch(() => this.error = true)
+    },
 }
 
 </script>

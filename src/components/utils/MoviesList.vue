@@ -5,11 +5,15 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div v-for="movie in movies" v-bind:key="movie.id" class="col-sm-6 col-md-4 col-lg-4 p-3">
-                <!-- v-bind : prop attendue = valeur (mon alias du v-for) -->
-                <MovieCard v-bind:movie="movie" />
-
-
+            <!-- <div v-for="(movie, index) in movies" v-bind:key="movie.id" class="col-sm-6 col-md-4 col-lg-4 p-3"> -->
+            <!-- v-bind : prop attendue = valeur (mon alias du v-for) -->
+            <div v-for="(movie, index) in movies " v-bind:key="movie.id" class="col-sm-6 col-md-4 col-lg-4 p-3">
+                <!-- v-bind : prop attendue = valeur -->
+                <MovieCard v-bind:movie="movie" v-bind:index="index" />
+                <!-- en fonctioon php ca donnerait ça-> foreach ($movies as $movie){
+                                                                                                                movieCard(movie, index)
+                                                                                                                }
+                                                                                                                function movieCard($movie, $index)-->
             </div>
         </div>
     </div>
@@ -19,7 +23,7 @@
 
 <script>
 
-
+import '@/styles.css';
 import MovieCard from "./MovieCard.vue";
 
 export default {
@@ -30,7 +34,8 @@ export default {
     },
 
     // list de films à afficher, fournie par le parent
-    props: ["movies"],
+    props: [
+        "movies"],
 
 }
 </script>

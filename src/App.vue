@@ -4,8 +4,13 @@
 
     <!-- si la route est / (racine du site) -->
     <div v-if="$route.path == '/'">
-      <h1>Kinema</h1>
 
+      <div class="video-wrapper mx-auto">
+        <video controls autoplay loop muted>
+          <source src="../public/video/pellicule.mp4" type=video/mp4>
+        </video>
+        <h1 class="header">Kinema</h1>
+      </div>
       <h3 class="pb-4 font-weight-light">
         Votre évasion à portée de télécommande !
       </h3>
@@ -22,6 +27,8 @@
         <MoviesList v-bind:movies="popularMovies" /> <!--:loading="loading" :errored="errored" -->
       </div>
     </div>
+
+
     <!-- tout les autres cas : si la route est différente de  -->
     <div v-else>
       <!-- si la route est différente de / -->
@@ -45,14 +52,13 @@ import HeaderNav from "./components/template/HeaderNav.vue"
 import FooterInfo from "./components/template/FooterInfo.vue";
 
 import MoviesList from "./components/utils/MoviesList.vue";
-import AmericanMovies from "./components/AmericanMovies.vue";
 
 export default {
 
   name: 'App',
 
   components: {
-    HeaderNav, FooterInfo, MoviesList, AmericanMovies
+    HeaderNav, FooterInfo, MoviesList
   },
 
   data() { //LES variables dispo dans mon composant

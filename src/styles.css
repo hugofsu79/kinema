@@ -1,0 +1,36 @@
+h1 {
+    padding: 4em;
+    /* position: sticky;
+    top: 0; */
+}
+
+/* h1 .kinema {
+    background-clip: ;
+} */
+
+video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.video-wrapper {
+    margin-bottom: 4em;
+    height: 100%;
+    /* width: auto; */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.224);
+}
