@@ -10,7 +10,7 @@
             <div v-for="(movie, index) in movies " v-bind:key="movie.id" class="col-sm-6 col-md-4 col-lg-4 p-3">
                 <!-- v-bind : prop attendue = valeur -->
                 <MovieCard v-bind:movie="movie" v-bind:index="index" />
-                <!-- en fonctioon php ca donnerait ça-> foreach ($movies as $movie){
+                <!-- en fonction php ca donnerait ça-> foreach ($movies as $movie){   https://vuejs.org/api/built-in-directives.html#v-for
                                                                                                                 movieCard(movie, index)
                                                                                                                 }
                                                                                                                 function movieCard($movie, $index)-->

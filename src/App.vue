@@ -9,9 +9,11 @@
         <video controls autoplay loop muted>
           <source src="../public/video/pellicule.mp4" type=video/mp4>
         </video>
-        <h1 class="header">Kinema</h1>
+        <h1 class="header">kinēma</h1>
+        <h1 class="header_blur">kinēma</h1>
+
       </div>
-      <h3 class="pb-4 font-weight-light">
+      <h3 class="pb-4 font-weight-light text-center">
         Votre évasion à portée de télécommande !
       </h3>
 
@@ -72,7 +74,7 @@ export default {
     // code déclenché avant la génération du template par Vue
     // c'est ici que je vais lancer mon appel API
 
-    //!\             Adresse de l'api   / version /mot-clé          /Clé Api                /Les options : langue française + pop décroissante + page 1 /!\\
+    //!\        Adresse de l'api   / version /mot-clé          /Clé Api                /Les options : langue française + pop décroissante + page 1 /!\\
     axios.get("https://api.themoviedb.org/3/discover/movie/?api_key=e4593b61307460771ee08604391c22e4&language=fr&sort_by=popularity.desc&page=1")
 
       //.then cas où l'appel de l'API a réussi et renvoie un résultat
@@ -82,29 +84,11 @@ export default {
         this.popularMovies = res.data.results // Je stock mes films récupérés dans la variable movies des datas (console -> Proxy)
         console.log(this.popularMovies)
       })
+
+
       //.catch => cas où l'appel API échoue
       .catch(() => this.error = true)
+
   }
-
-  // created() {
-  //   axios.get("https://api.themoviedb.org/3/discover/movie?certification_country=usa")
-  //     .then(res => {
-  //       this.popularMovies = res.data.results // Je stock mes films récupérés dans la variable movies des datas (console -> Proxy)
-  //       console.log(this.popularMovies)
-  //     })
-  // }
-
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: black;
-  margin-top: 60px;
-  /* background-color: #351614; */
-}
-</style>

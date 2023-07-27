@@ -35,7 +35,7 @@ const routes = [ //on déclare les routes
         component: Top50Movies
     },
     {
-        path: '/MovieDetails',
+        path: '/MovieDetails/:id',
         component: MovieDetails
     },
     {
