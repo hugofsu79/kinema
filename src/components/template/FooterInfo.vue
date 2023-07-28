@@ -1,8 +1,16 @@
 <template>
     <footer>
         <div class="row text-center">
-            <div class="col p-2">Suivez-nous</div>
-            <div class="col p-2" style="border-left: 1px solid #545454;">Kinema Bientôt sur mobile</div>
+            <div class="col p-2">Suivez-nous<br>
+                <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-twitter" style="color: #ffffff; padding-left: 1em;"></i>
+                <i class="fa-brands fa-instagram" style="color: #ffffff; padding-left: 1em;"></i>
+                <i class="fa-brands fa-tiktok" style="color: #ffffff; padding-left: 1em;"></i>
+                <i class="fa-regular fa-envelope" style="color: #ffffff; padding-left: 1em; padding-bottom: 3em"></i>
+            </div>
+            <div class="col p-2" style="border-left: 1px solid #545454;">Kinema Bientôt sur mobile <br>
+                <i class="fa-brands fa-apple" style="color: #ffffff;"></i>
+            </div>
             <div class="col p-2" style="border-left: 1px solid #545454;">Kinema à l'étranger</div>
         </div>
 
@@ -18,6 +26,12 @@
             <div class=" col">Revue de presse</div>
             <div class=" col">Les services Kinema</div>
             <div class=" col">©Kinema</div>
+        </div>
+
+        <div class="text-center mx-auto">
+            <router-link to="/" class="navbar-brand">
+                <img src="../../assets/logo_2.png" alt="Logo" width="90" height="90">
+            </router-link>
         </div>
 
         <div class="col  pb-5 text-center pt-5">Retrouvez tous les horaires et infos de votre cinéma sur le numéro Kinema: 0

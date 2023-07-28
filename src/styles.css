@@ -70,7 +70,8 @@ footer {
     color: white;
 }
 
-/* Card style  */
+/* Card style detail */
+
 .container_card {
     padding-top: 9em;
     padding-bottom: 7em;
@@ -90,21 +91,59 @@ footer {
     border-radius: 1em;
     color: white;
     padding: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 4em;
     background-color: #2B2B2B;
+}
+
+.badge {
+    margin-right: 1em;
+    margin-bottom: 1em;
 }
 
 .video_card {
     border-radius: 1em;
 }
 
+
+.card_aperçu {
+    color: white !important;
+    background-color: #2B2B2B;
+}
+
+
+
+
 /* Search  */
+
+.search_movies {
+    position: sticky;
+    top: 0;
+}
+
+/* detail film */
+
+iframe {
+    width: 100%;
+}
 
 
 @media (max-width: 767.98px) {
-
     .text_card {
         padding-top: 1em;
+    }
+
+    .header_blur {
+        padding-top: 3em;
+        font-size: 4em;
+    }
+
+    .header {
+        padding-top: 3em;
+        font-size: 4em;
+    }
+
+    h1 {
+        padding-top: 4em;
     }
 
 }
@@ -115,4 +154,19 @@ footer {
         margin-top: 1em;
         text-align: center;
     }
+
+    .header_blur {
+        padding-top: 2em;
+        font-size: 4em;
+    }
+
+    .header {
+        padding-top: 2em;
+        font-size: 4em;
+    }
+
+    h1 {
+        padding-top: 5em;
+    }
+
 }

@@ -10,7 +10,7 @@
                     <div class="text_card">
                         <div class="row">
                             <h2 class="title_card">{{ movie.original_title }}</h2>
-                            <p class="card-text">note moyenne : {{ Math.round(movie.vote_average * 10) / 10 }}</p>
+                            <p class="card-text"><i class="fa-regular fa-star" style="color: #f5ec00;"></i> {{ Math.round(movie.vote_average * 10) / 10 }}</p>
                             <h5 class="card-text mb-2">À partir du {{ formatDate(movie.release_date) }} en salle</h5>
                         </div>
                         <span v-for="genre in movie.genres" :key="genre.id"

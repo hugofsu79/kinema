@@ -1,9 +1,9 @@
 <template>
-    <body>
+    <body style="padding-bottom: 25em;">
         <div class="container d-flex flex-column align-items-center">
             <h1>Recherche un film</h1>
-            <input class="border mt-3" v-model="query" @keyup="searchMovies()">
-            <MoviesList :movies="movies" />
+                    <input class="search_movies border mt-3 text-center rounded-pill p-2" v-model="query" @keyup="searchMovies()" placeholder="&#8981; Rechercher">
+                    <MoviesList :movies="movies" />
         </div>
 
 

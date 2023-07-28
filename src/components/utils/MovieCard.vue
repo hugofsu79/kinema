@@ -6,26 +6,29 @@
         <p v-if="$route.path == '/Top50Movies'">
             <span v-once>n°{{ index + 1 }} </span>
         </p>
-        <div class="card mb-2" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4 d-flex align-items-center">
+
+
+        <div class="row row-cols-1 g-4">
+            <div class="col">
+                <div class="card">
                     <img v-bind:src="urlDeBase + movie.poster_path" class="img-fluid rounded-4 p-2" alt="poster_du_film">
-                </div>
-                <!--/v-bind:key optimisé juste :key -->
-                <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">{{ movie.title.substring(0, 20) }}</h5>
-                        <!--{{alias_de_chaque_film.élément souhaité}}-->
-                        <p class="card-text">note moyenne : {{ movie.vote_average }}</p>
+                        <p class="card-text"><i class="fa-regular fa-star" style="color: #f5ec00;"></i> {{ movie.vote_average }}</p>
                         <p class="card-text">Date de sortie : {{ movie.release_date }}</p>
                         <p class="card-text"> {{ movie.overview.substring(0, 160) + "..." }}</p>
-                        <!-- <p class="card-text">{{ movie.vote_count }} votes</p> -->
                     </div>
                 </div>
             </div>
         </div>
+
+
     </router-link>
 </template>
+
+
+
+
 
 <script>
 
